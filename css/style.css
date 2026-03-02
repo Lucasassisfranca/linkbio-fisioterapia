@@ -2,49 +2,126 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Arial', sans-serif;
+}
+
+:root {
+  --laranja-principal: #ff8a3d;
+  --laranja-escuro: #f47320;
+  --off-white: #f4f4f0;
 }
 
 body {
-  background: linear-gradient(135deg, #111, #333);
-  min-height: 100vh;
+  
+  height: 100vh;
+  overflow: hidden;
+  background: var(--off-white);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  color: #fff;
 }
 
 .container {
   text-align: center;
-  width: 90%;
-  max-width: 400px;
+  padding: 60px 20px;
+  flex: 1;
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 20px;
+  border: 4px solid white;
+  z-index: 2;
+  margin-bottom: 15px;
+}
+
+.avatar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px var(--off-white);
+}
+
+.header {
+  width: 100%;
+  height: 420px; 
+  padding-top: 60px; 
+  padding-bottom: 60px;
+  background: var(--laranja-principal);
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* ISSO FAZ A CURVA */
+ border-bottom-left-radius: 100% 170px;
+ border-bottom-right-radius: 100% 170px;
+}
+
+.header-text {
+  text-align: center;
+  color: var(--off-white);
+  z-index: 2;
+}
+
+.header-text h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.header-text p {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
 }
 
 h1 {
-  font-size: 24px;
-  margin-bottom: 8px;
+  font-size: 30px;
+  font-weight: 700;
 }
 
-p {
-  font-size: 14px;
-  margin-bottom: 20px;
-  opacity: 0.8;
+.subtitle {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--off-white);
+  margin: 10px 0 25px;
 }
 
-.btn {
-  display: block;
+.btn-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   background: #25d366;
-  color: #000;
-  padding: 15px;
-  border-radius: 8px;
+  color: var(--off-white);
+  padding: 14px 22px;
+  border-radius: 30px;
   text-decoration: none;
+  font-size: 15px;
   font-weight: bold;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-whatsapp i {
+  font-size: 20px;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+}
+
+.footer {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.logo-footer {
+  width: 300px;
+  max-width: 90%;
+  height: auto;
+  opacity: 1;
 }
