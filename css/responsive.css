@@ -3,7 +3,12 @@
    =============================== */
 @media (max-width: 480px) {
 
+  /* BODY — corrige bug de 100vh no mobile */
   body {
+    display: block;
+    height: auto;
+    min-height: 100%;
+    overflow-y: auto;
     overflow-x: hidden;
   }
 
@@ -34,11 +39,13 @@
     letter-spacing: 1.5px;
   }
 
-  /* BOTÃO */
+  /* CONTAINER — ISSO É CRÍTICO */
   .container {
-    margin-top: 90px;
+    margin-top: 60px;
+    flex: none; /* <<< libera o footer no mobile */
   }
 
+  /* BOTÃO */
   .btn-whatsapp {
     width: 90%;
     justify-content: center;
@@ -48,11 +55,11 @@
 
   /* FOOTER */
   .footer {
-    margin-top: 60px;
-    padding-bottom: 20px;
+    margin-top: 10px;
+    padding-bottom: 15px;
   }
 
   .logo-footer {
-    width: 220px;
+    width: 250px;
   }
 }
